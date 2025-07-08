@@ -23,6 +23,9 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
+gem 'graphql'
+gem 'faraday'
+gem 'pagy', "~> 8.0.2" #Need 8 due to instability with v 9
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -42,6 +45,7 @@ group :development, :test do
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
+  gem 'rspec-rails'
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
@@ -57,3 +61,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+gem "graphiql-rails", group: :development
