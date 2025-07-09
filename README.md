@@ -1,6 +1,4 @@
-# GitHub Events API
-
-A Ruby on Rails application that provides a GraphQL interface for fetching GitHub events with pagination support.
+# fixd-backend
 
 ## Prerequisites
 
