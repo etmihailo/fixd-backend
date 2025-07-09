@@ -10,8 +10,11 @@
       <% @paginated_events.each do |event| %>
         <li class="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm">
           <p class="text-sm text-gray-800">
-            <span class="font-medium text-blue-600"><%= event[:id] %></span> –
-            <span class="text-gray-700"><%= event[:name] %></span>
+            <span class="font-medium text-blue-600"><%= event[:type] %></span> –
+            <span class="text-gray-700"><%= event[:repo] %></span>
+          </p>
+          <p class="text-xs text-gray-500 mt-1">
+            <%= event[:created_at]&.strftime('%b %d, %Y %I:%M %p') || event[:time] %>
           </p>
         </li>
       <% end %>
