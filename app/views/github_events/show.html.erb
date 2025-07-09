@@ -1,1 +1,24 @@
-<h1>fixd backend show</h1>
+<div class="min-h-screen bg-gray-100 flex items-center justify-center py-10">
+  <div class="bg-white rounded-xl shadow-md p-8 w-full max-w-2xl">
+    <h1 class="text-2xl font-bold text-center text-gray-800 mb-4">fixd backend show</h1>
+
+    <h2 class="text-lg text-center text-gray-600 mb-6">
+      Github Activity for <span class="font-semibold text-blue-600"><%= @username %></span>
+    </h2>
+
+    <ul class="space-y-4 mb-6">
+      <% @paginated_events.each do |event| %>
+        <li class="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm">
+          <p class="text-sm text-gray-800">
+            <span class="font-medium text-blue-600"><%= event[:id] %></span> –
+            <span class="text-gray-700"><%= event[:name] %></span>
+          </p>
+        </li>
+      <% end %>
+    </ul>
+
+    <div class="flex justify-center">
+      <%== pagy_nav(@pagy) if @pagy %>
+    </div>
+  </div>
+</div>
