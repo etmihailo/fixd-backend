@@ -9,9 +9,7 @@ class GithubEventsController < ApplicationController
 
   def show
     @username = params[:username]
-    Rails.logger.info "@@@@@@@@@@@@@@@@@#{@username}"
     events = GithubEventService.fetch(@username)
-    Rails.logger.info "!!!!!!!!!!!!!!!!!!!#{events}"
 
     @pagy, @paginated_events = pagy_array(events, items: 10)
   end

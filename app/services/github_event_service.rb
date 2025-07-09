@@ -3,7 +3,6 @@ class GithubEventService
 
   def self.fetch(username)
     response = Faraday.get("#{GITHUB_API_URL}/users/#{username}/events/public")
-    Rails.logger.info "$$$$$$$$$$$$$$#{response}"
 
     if response.success?
       begin
