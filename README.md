@@ -77,11 +77,11 @@ rspec spec/requests/github_events_spec.rb
 
 ### Performance & Scalability
 
-- **No Caching**: Repeated requests for the same user could exhaust API rate limits as there's no caching mechanism in place
+- **No Caching**: Repeated requests for the same user could hit API rate limits as there's no caching mechanism in place for the service
 - **Pagination Strategy**: Currently using Pagy for pagination, which pulls all records through the service. While GitHub's API supports pagination and limits results to the first 30 pages, implementing API-level pagination could improve performance for larger datasets
 
 ### Architecture
 
-- **GraphQL Layer**: Due to time constraints, the GraphQL gem was used directly. For more complex applications, consider implementing a separate GraphQL service layer to avoid gem constraints
+- **GraphQL Layer**: Due to time constraints, the GraphQL gem was used directly. For more complex applications, maybe using a separate GraphQL service layer is reasonable to avoid gem constraints
 - **Test Coverage**: Common edge cases are covered, but more complex scenarios may require additional test coverage
-- **Error Handling**: General error handling is implemented, but more sophisticated error management could be added
+- **Error Handling**: General error handling is implemented, but more sophisticated error handling could be added
