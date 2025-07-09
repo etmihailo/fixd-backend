@@ -6,7 +6,12 @@ class GithubEventService
     Rails.logger.info "$$$$$$$$$$$$$$#{response}"
 
     if response.success?
-      parse_events(JSON.parse(response.body))
+      begin
+        parse_events(JSON.parse(response.body))
+      rescue JSON::ParserError => e
+        Rails.logger.error("Error #{e.message}")
+        []
+      end
     else
       []
     end
