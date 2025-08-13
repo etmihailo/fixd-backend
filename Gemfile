@@ -25,7 +25,7 @@ gem "solid_queue"
 gem "solid_cable"
 gem 'graphql'
 gem 'faraday'
-gem 'pagy', "~> 8.0.2" #Need 8 due to instability with v 9
+gem 'pagy', "~> 9.4.0" #Need 8 due to instability with v 9
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
